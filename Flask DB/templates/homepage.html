@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopee-Like Homepage</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #ee4d2d;
+      color: #white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar input[type="text"] {
+      width: 40%;
+      padding: 5px;
+    }
+
+    .banner {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content if needed */
+    padding: 50px;
+    background-color: #f5f5f5; /* Optional: Add background color */
+  }
+
+  .banner img {
+    width: 300%;
+    max-width: 100%; /* Adjust as per the design */
+    border-radius: 8px;
+  }
+
+  .menu {
+  display: flex;
+  justify-content: space-around;  /* Distribute items evenly */
+  background-color: #fff;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-item {
+  text-align: center;
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  font-size: 14px;
+  display: flex;  /* Use flexbox to align text and images */
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.menu-item img {
+  max-width: 50px;  /* Ensure the images fit nicely within the fixed size */
+  max-height: 50px;
+}
+
+.menu-item div {
+  margin-top: 10px; /* Space between the image and the text */
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .category {
+      text-align: center;
+      font-size: 13px;
+      transition: transform 0.3s;
+    }
+
+    .category img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div><strong>My Store</strong></div>
+    <input type="text" placeholder="Search products...">
+  </div>
+
+  <div class="banner">
+    <a href="#">
+        <img src="{{ url_for('static', filename='images/background.jpg') }}" alt="HA" >
+    </a>
+</div>
+
+<div class="menu">
+  <div class="menu-item">
+    <img src="{{ url_for('static', filename='images/1.png') }}" alt="">
+    <div>Trending Fashion</div>
+  </div>
+  <div class="menu-item">
+    <img src="{{ url_for('static', filename='images/2.png') }}" alt="">
+    <div>Shopee Beauty</div>
+  </div>
+  <div class="menu-item">
+    <img src="{{ url_for('static', filename='images/3.png') }}" alt="">
+    <div>Vouchers</div>
+  </div>
+  <div class="menu-item">
+    <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+    <div>Rewards</div>
+  </div>
+</div>
+
+
+  <div class="categories">
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/mens.jpg') }}" alt="Men's Apparel">
+        <div>Men's Apparel</div>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/home.jpg') }}" alt="Mobiles">
+        <div>Mobiles</div>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/accesories.jpg') }}" alt="Accessories">
+        <div>Accessories</div>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/home.jpg') }}" alt="Home & Living">
+        <div>Home & Living</div>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/gro.jpg') }}" alt="Groceries">
+        <div>Groceries</div>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/bag.jpg') }}" alt="Women's Bags">
+        <div>Women's Bags</div>
+    </div>
+</div>
+</body>
+</html>
